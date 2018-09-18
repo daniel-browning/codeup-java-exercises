@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ConsoleExercises {
     public static void main(String[] args) {
         double pi = 3.14159;
-        System.out.format("The value of pi is approximately %s", pi + "\n"); //why is this %s and not %d?
+        System.out.format("The value of pi is approximately %.2f" + "\n", pi);
 
         //Enter an integer
         Scanner scanner = new Scanner(System.in);
@@ -11,13 +11,18 @@ public class ConsoleExercises {
         System.out.print("Enter an integer");
         int userInput = scanner.nextInt();
         System.out.println("User entered: " + userInput + "\n");
+        //System.out.format("User entered %d" + "\n");
 
         //Enter three words
         Scanner wordInput = new Scanner(System.in);
 
         System.out.print("Enter three words"  + "\n");
-        String userInputString = wordInput.nextLine();
-        System.out.println("User entered: " + userInputString + "\n");
+        String userInputString1 = wordInput.next();
+        String userInputString2 = wordInput.next();
+        String userInputString3 = wordInput.next();
+        System.out.println(userInputString1);
+        System.out.println(userInputString2);
+        System.out.println(userInputString3);
 
         //Enter a sentence
         Scanner sentenceInput = new Scanner(System.in);
