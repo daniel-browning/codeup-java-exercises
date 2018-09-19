@@ -3,24 +3,29 @@ import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
-        Scanner power = new Scanner(System.in);
-
-        System.out.print("What number would you like to go up to?");
-        int userInput = power.nextInt();
-        System.out.println("Here is your table!");
-        System.out.println("number | squared | cubed   ");
-        System.out.println("------ | ------- | ------");
-        for (long i = 1; i <= userInput; i++) {
-
-            System.out.format("%-8s| %-9s | %-9s%n", i, i*i, i*i*i);
-            //System.out.println(i + "       | " + (i * i) + "      | " + (i * i * i));
-            if (i == userInput) {
-                break;
+        Scanner scanner = new Scanner(System.in);
+        boolean confirm = true;
+        while (confirm) {
+            System.out.print("Please enter numerical grade");
+            int grade = scanner.nextInt();
+            char letterGrade = '*';
+            if (grade >= 0 && grade <= 100) {
+                if (grade >= 88) letterGrade = 'A';
+                else if (grade >= 80) letterGrade = 'B';
+                else if (grade >= 67) letterGrade = 'C';
+                else if (grade >= 60) letterGrade = 'D';
+                else letterGrade = 'F';
             }
-        } System.out.print("Would you like to continue?");
+            System.out.println(letterGrade);
 
+            System.out.println("Do you want to continue?");
+            String answer = scanner.next();
+            if (!answer.toLowerCase().contains("y"));
+            confirm  = false;
         }
+        System.out.println("Thank you for using our grading system!");
     }
+}
 
 
 
