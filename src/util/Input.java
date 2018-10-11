@@ -2,6 +2,7 @@ package util;
 
 import java.util.Scanner;
 
+
 public class Input {
     public static Scanner scan;
 
@@ -31,11 +32,27 @@ public class Input {
 
     public int getInt(int min, int max) {
         System.out.println("Please input an integer between " + min + " and " + max);
-        return getInt();
+        int input;
+        try {
+            input = Integer.valueOf(getString());
+            if (input < min || input > max); //throw new
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid integer");
+            return getInt(min, max);
+        }
+        return input;
     }
 
     public double getDouble() {
-        return scan.nextDouble();
+        System.out.println("PLease input a double precision number");
+        double input;
+        try {
+            input = Double.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid number. Please try again");
+            input = getDouble();
+        }
+        return input;
     }
 
     public double getDouble(double min, double max) {
